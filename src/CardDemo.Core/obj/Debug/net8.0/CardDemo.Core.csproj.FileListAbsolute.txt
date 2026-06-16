@@ -1,0 +1,5 @@
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.AssemblyInfoInputs.cache
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.AssemblyInfo.cs
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.csproj.CoreCompileInputs.cache
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.sourcelink.json
