@@ -1,6 +1,7 @@
 using CardDemo.Core.Entities;
 using CardDemo.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace CardDemo.Web.Controllers;
 

@@ -3,3 +3,10 @@
 /Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.AssemblyInfo.cs
 /Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.csproj.CoreCompileInputs.cache
 /Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.sourcelink.json
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/bin/Debug/net8.0/CardDemo.Core.deps.json
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/bin/Debug/net8.0/CardDemo.Core.dll
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/bin/Debug/net8.0/CardDemo.Core.pdb
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.dll
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/refint/CardDemo.Core.dll
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/CardDemo.Core.pdb
+/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/obj/Debug/net8.0/ref/CardDemo.Core.dll

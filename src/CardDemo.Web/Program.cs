@@ -12,7 +12,7 @@ builder.Services.AddRazorPages();
 
 // Configure Database
 builder.Services.AddDbContext<CardDemoDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Register Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -28,7 +28,7 @@ builder.Services.AddScoped<ICardService, CardService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<ICardAccountCrossReferenceService, CardAccountCrossReferenceService>();
+builder.Services.AddScoped<ICardAccountCrossReferenceService, CardDemo.Infrastructure.Services.CardAccountCrossReferenceService>();
 
 // Add Session
 builder.Services.AddSession(options =>

@@ -5,7 +5,7 @@ namespace CardDemo.Infrastructure.Data;
 
 /// <summary>
 /// Database context for CardDemo application
-/// Replaces VSAM/DB2 with SQL Server using Entity Framework Core
+/// Replaces VSAM/DB2 with SQLite using Entity Framework Core
 /// </summary>
 public class CardDemoDbContext : DbContext
 {

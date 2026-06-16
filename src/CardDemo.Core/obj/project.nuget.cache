@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6WuLiWJQE9E=",
+  "dgSpecHash": "n9VS/G81GtU=",
   "success": true,
   "projectFilePath": "/Users/jnatkowski/Desktop/DevinTest/src/CardDemo.Core/CardDemo.Core.csproj",
   "expectedPackageFiles": [
-    "/Users/jnatkowski/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "/Users/jnatkowski/.nuget/packages/microsoft.netcore.app.ref/8.0.28/microsoft.netcore.app.ref.8.0.28.nupkg.sha512",
-    "/Users/jnatkowski/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.28/microsoft.aspnetcore.app.ref.8.0.28.nupkg.sha512"
+    "/Users/jnatkowski/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
