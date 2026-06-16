@@ -24,7 +24,7 @@ public class CardManagementController : Controller
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(long? accountId)
     {
         var userId = HttpContext.Session.GetString("UserId");
         if (string.IsNullOrEmpty(userId))
@@ -35,10 +35,9 @@ public class CardManagementController : Controller
         var cards = new List<Card>();
         
         // Get cards by account ID if provided
-        if (TempData["AccountId"] != null)
+        if (accountId.HasValue)
         {
-            var accountId = Convert.ToInt64(TempData["AccountId"]);
-            cards = (await _cardService.GetCardsByAccountIdAsync(accountId)).ToList();
+            cards = (await _cardService.GetCardsByAccountIdAsync(accountId.Value)).ToList();
         }
 
         ViewBag.UserName = HttpContext.Session.GetString("UserName");

@@ -21,7 +21,7 @@ public class AccountManagementController : Controller
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(long? accountId)
     {
         var userId = HttpContext.Session.GetString("UserId");
         if (string.IsNullOrEmpty(userId))
@@ -34,10 +34,9 @@ public class AccountManagementController : Controller
         var accounts = new List<Account>();
         
         // Get account by ID if provided
-        if (TempData["AccountId"] != null)
+        if (accountId.HasValue)
         {
-            var accountId = Convert.ToInt64(TempData["AccountId"]);
-            var account = await _accountService.GetAccountByIdAsync(accountId);
+            var account = await _accountService.GetAccountByIdAsync(accountId.Value);
             if (account != null)
             {
                 accounts.Add(account);

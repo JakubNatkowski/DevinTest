@@ -21,7 +21,7 @@ public class TransactionManagementController : Controller
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(long? accountId)
     {
         var userId = HttpContext.Session.GetString("UserId");
         if (string.IsNullOrEmpty(userId))
@@ -32,10 +32,9 @@ public class TransactionManagementController : Controller
         var transactions = new List<Transaction>();
         
         // Get transactions by account ID if provided
-        if (TempData["AccountId"] != null)
+        if (accountId.HasValue)
         {
-            var accountId = Convert.ToInt64(TempData["AccountId"]);
-            transactions = (await _transactionService.GetTransactionsByAccountIdAsync(accountId)).ToList();
+            transactions = (await _transactionService.GetTransactionsByAccountIdAsync(accountId.Value)).ToList();
         }
 
         ViewBag.UserName = HttpContext.Session.GetString("UserName");

@@ -38,10 +38,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Account Management</h5>
                         <p class="card-text">View and update account information</p>
-                        @{
-                            TempData["AccountId"] = 10000000001;
-                        }
-                        <a asp-controller="AccountManagement" asp-action="Index" class="btn btn-primary">Accounts</a>
+                        <a asp-controller="AccountManagement" asp-action="Index" asp-route-accountId="10000000001" class="btn btn-primary">Accounts</a>
                     </div>
                 </div>
             </div>
@@ -51,10 +48,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Credit Cards</h5>
                         <p class="card-text">Manage credit cards</p>
-                        @{
-                            TempData["AccountId"] = 10000000001;
-                        }
-                        <a asp-controller="CardManagement" asp-action="Index" class="btn btn-primary">Cards</a>
+                        <a asp-controller="CardManagement" asp-action="Index" asp-route-accountId="10000000001" class="btn btn-primary">Cards</a>
                     </div>
                 </div>
             </div>
@@ -64,10 +58,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Transactions</h5>
                         <p class="card-text">View and process transactions</p>
-                        @{
-                            TempData["AccountId"] = 10000000001;
-                        }
-                        <a asp-controller="TransactionManagement" asp-action="Index" class="btn btn-primary">Transactions</a>
+                        <a asp-controller="TransactionManagement" asp-action="Index" asp-route-accountId="10000000001" class="btn btn-primary">Transactions</a>
                     </div>
                 </div>
             </div>
