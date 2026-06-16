@@ -1,0 +1,82 @@
+@model IEnumerable<CardDemo.Core.Entities.Account>
+@{
+    ViewData["Title"] = "Accounts";
+    var userName = ViewBag.UserName as string;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">CardDemo</a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text me-3">Welcome, @userName</span>
+                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-outline-light btn-sm">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Accounts</h2>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back to Menu</a>
+        </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        @if (Model != null && Model.Any())
+        {
+            <div class="row">
+                @foreach (var account in Model)
+                {
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Account: @account.AccountId</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Status:</strong> @(account.ActiveStatus ? "Active" : "Inactive")</p>
+                                <p><strong>Current Balance:</strong> @account.CurrentBalance.ToString("C")</p>
+                                <p><strong>Credit Limit:</strong> @account.CreditLimit.ToString("C")</p>
+                                <p><strong>Available Credit:</strong> @((account.CreditLimit - account.CurrentBalance).ToString("C"))</p>
+                                <p><strong>Cash Credit Limit:</strong> @account.CashCreditLimit.ToString("C")</p>
+                                <p><strong>Open Date:</strong> @account.OpenDate.ToString("MM/dd/yyyy")</p>
+                                <p><strong>Expiration Date:</strong> @account.ExpirationDate.ToString("MM/dd/yyyy")</p>
+                                
+                                <div class="mt-3">
+                                    <a asp-action="Details" asp-route-id="@account.AccountId" class="btn btn-info btn-sm">Details</a>
+                                    <a asp-action="Edit" asp-route-id="@account.AccountId" class="btn btn-warning btn-sm">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                No accounts found. This is a demo - in production, accounts would be linked to your customer profile.
+            </div>
+        }
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
